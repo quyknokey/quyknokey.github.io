@@ -1,1 +1,11 @@
-<pre> ```mermaid flowchart TD A[Start Game] --> B{Is the guess correct?} B -- Yes --> C[Display "Correct!"] B -- No --> D{Is guess too high?} D -- Yes --> E[Display "Too high!"] D -- No --> F[Display "Too low!"] E --> G[Ask for another guess] F --> G G --> B C --> H[End Game] ``` </pre>
+'''mermaid
+flowchart TD
+A ( [Start] ) --> B[Initialize Game]
+B--﻿﻿﻿> C[Player Makes a Guess]
+﻿﻿﻿C--> D{Is the Guess Correct?}
+D-﻿﻿﻿- Yes --> E[Display 'You Win!']
+D -- No --> F{Attempts Left?}
+F -- Yes --> C
+F -- No -—> G[Display 'Game Over']
+E --> H[End]
+G --> H Sent from my iPhone
